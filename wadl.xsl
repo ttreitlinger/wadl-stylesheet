@@ -234,6 +234,10 @@
                                 <xsl:with-param name="style" select="'query'"/>
                             </xsl:call-template>
                     
+                            <xsl:call-template name="getParamBlock">
+                                <xsl:with-param name="style" select="'plain'"/>
+                            </xsl:call-template>
+                    
                             <xsl:call-template name="getRepresentations"/>
                         </xsl:for-each> <!-- wadl:request -->
                     </xsl:when>
@@ -299,7 +303,11 @@
                                         </xsl:for-each>
                                     </table>
                                 </xsl:if>
-    
+                                
+                                <xsl:call-template name="getParamBlock">
+                                    <xsl:with-param name="style" select="'plain'"/>
+                                </xsl:call-template>
+                                
                                 <xsl:call-template name="getRepresentations"/>
                                 </div>  <!-- left indent for response headers/representations -->
                             </xsl:if>
